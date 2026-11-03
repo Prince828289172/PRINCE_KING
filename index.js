@@ -576,7 +576,7 @@ app.listen(PORT, '0.0.0.0', async () => {
   setInterval(() => {
     const used = Math.round(process.memoryUsage().heapUsed / 1024 / 1024);
     console.log(chalk.gray(`💾 Memory: ${used} MB | Sessions: ${Object.keys(royalHeroesSessions).length}`));
-    if (used > 450 && global.gc) {
+    if (used > 400 && global.gc) {
       console.log(chalk.yellow(`🧹 Forcing GC (${used}MB)`));
       global.gc();
     }
